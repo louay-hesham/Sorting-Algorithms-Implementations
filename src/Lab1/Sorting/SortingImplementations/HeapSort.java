@@ -10,6 +10,11 @@ public class HeapSort extends SortingTechnique {
 
     int heapSize;
 
+    public HeapSort(int[] array, SortingDirection direction) {
+        super(array, direction);
+        this.heapSize = array.length;
+    }
+
     private int left(int i) {
         return 2 * i + 1;
     }
@@ -25,22 +30,22 @@ public class HeapSort extends SortingTechnique {
     private void heapify(int i) {
         int l = this.left(i);
         int r = this.right(i);
-        int largest;
-        if (l <= this.heapSize && this.compareNumbers(array[l], array[i])) {
-            largest = l;
+        int target;
+        if (l < this.heapSize && this.compareNumbers(array[l], array[i])) {
+            target = l;
         } else {
-            largest = i;
+            target = i;
         }
 
-        if (r <= this.heapSize && this.compareNumbers(array[r], array[largest])) {
-            largest = r;
+        if (r < this.heapSize && this.compareNumbers(array[r], array[target])) {
+            target = r;
         }
 
-        if (largest != i) {
+        if (target != i) {
             int temp = array[i];
-            array[i] = array[largest];
-            array[largest] = temp;
-            heapify(largest);
+            array[i] = array[target];
+            array[target] = temp;
+            heapify(target);
         }
     }
 
@@ -53,17 +58,12 @@ public class HeapSort extends SortingTechnique {
     @Override
     protected void sort() {
         this.buildHeap();
-        for (int i = array.length; i >= 2; i--) {
+        for (int i = array.length - 1; i >= 1; i--) {
             int temp = array[0];
             array[0] = array[i];
             array[i] = temp;
             this.heapSize--;
             this.heapify(0);
         }
-    }
-
-    public HeapSort(int[] array, SortingDirection direction) {
-        super(array, direction);
-        this.heapSize = array.length;
     }
 }
