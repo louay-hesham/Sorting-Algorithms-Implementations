@@ -12,28 +12,36 @@ import java.util.concurrent.ThreadLocalRandom;
 public class Main {
 
     private static final int rangeMin = 0, rangeMax = 1000000;
+    private static SortingDirection direction = SortingDirection.DESCENDING;
 
     public static void main(String[] args) {
         StringBuilder sb = new StringBuilder();
-        SortingDirection direction = SortingDirection.DESCENDING;
         int t = 1;
         for (int n = 100000; n <= 1000000; n += 100000) {
+            System.out.println("Testing with n = " + n);
             sb.append("Test case " + t + ": n = " + n + "\n");
             t++;
 
             int[] A = generateNumbers(n);
 
             SortingTechnique heapSort = new HeapSort(A, direction);
-            if (isSorted(heapSort.getSortedArray(), direction)) {
-                sb.append("Heap Sort:\tSuccess" + "\n");
-            } else {
-                sb.append("Heap Sort:\tFailure" + "\n");
-            }
+            testAlgorithm(heapSort, sb);
 
             sb.append("\n");
         }
 
         saveFile(sb.toString());
+    }
+
+    private static void testAlgorithm(SortingTechnique technique, StringBuilder sb){
+        long start = System.nanoTime();
+        int[] sorted = technique.getSortedArray();
+        long end = System.nanoTime();
+        if (isSorted(sorted, direction)) {
+            sb.append(technique.toString() + ":\tSuccess" + "\t\tTime elapsed = " + (end - start) + " nano seconds\n");
+        } else {
+            sb.append(technique.toString() + ":\tFailure" + "\n");
+        }
     }
 
     private static int[] generateNumbers(int n) {
@@ -62,7 +70,7 @@ public class Main {
 
         File file = new File("Test results.txt");
         try {
-            PrintWriter writer = new PrintWriter(file.getPath() + ".txt");
+            PrintWriter writer = new PrintWriter(file.getPath());
             writer.write(str);
             writer.close();
         } catch (FileNotFoundException e) {

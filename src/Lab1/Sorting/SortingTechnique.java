@@ -25,4 +25,6 @@ public abstract class SortingTechnique {
         this.sort();
         return this.array;
     }
+
+    public abstract String toString();
 }
