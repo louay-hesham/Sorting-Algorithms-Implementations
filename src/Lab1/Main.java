@@ -27,6 +27,8 @@ public class Main {
             SortingTechnique heapSort = new HeapSort(A, direction);
             testAlgorithm(heapSort, sb);
 
+            //Rest of sorting algorithms testing here ya gama3a. Same as the above two lines.
+
             sb.append("\n");
         }
 
