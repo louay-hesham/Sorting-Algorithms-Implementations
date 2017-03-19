@@ -14,15 +14,15 @@ public abstract class SortingTechnique {
         this.direction = direction;
     }
 
+    protected abstract void sort();
+
+    protected boolean compareNumbers(int x, int y) {
+        if (this.direction.equals(SortingDirection.ASCENDING)) return x < y;
+        else return x > y;
+    }
+
     public int[] getSortedArray() {
         this.sort();
         return this.array;
-    }
-
-    protected abstract void sort();
-
-    protected boolean compareNumbers(int x, int y){
-        if (this.direction.equals(SortingDirection.ASCENDING)) return x < y;
-        else return x > y;
     }
 }
