@@ -10,7 +10,7 @@ public abstract class SortingTechnique {
     protected final SortingDirection direction;
 
     public SortingTechnique(int[] array, SortingDirection direction) {
-        this.array = array;
+        this.array = array.clone();
         this.direction = direction;
     }
 
