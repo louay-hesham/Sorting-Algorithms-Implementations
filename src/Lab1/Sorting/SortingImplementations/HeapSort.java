@@ -66,4 +66,9 @@ public class HeapSort extends SortingTechnique {
             this.heapify(0);
         }
     }
+
+    @Override
+    public String toString() {
+        return "Heap Sort";
+    }
 }
