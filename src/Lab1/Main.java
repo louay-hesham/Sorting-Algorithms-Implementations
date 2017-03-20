@@ -29,7 +29,6 @@ public class Main {
 
             //Rest of sorting algorithms testing here ya gama3a. Same as the above two lines.
 
-            //ay 7aga fel talaga
             sb.append("\n");
         }
 
