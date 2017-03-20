@@ -32,6 +32,18 @@ public class QuickSort extends SortingTechnique {
             return left;
     }
 
+    public  void quickSort(int[] array, int left, int right){
+        if (left >= right) {
+            return;
+        }
+
+        int index = partition(array,left,right);
+        quickSort(array,left,index -1);
+        quickSort(array,index,right);
+
+    }
+}
+
     private static void swap (int [] array, int firstIndex, int secondIndex){
         int temp;
         temp = array[firstIndex];
