@@ -2,6 +2,7 @@ package Lab1;
 
 import Lab1.Sorting.SortingDirection;
 import Lab1.Sorting.SortingImplementations.HeapSort;
+import Lab1.Sorting.SortingImplementations.QuickSort;
 import Lab1.Sorting.SortingTechnique;
 
 import java.io.File;
@@ -25,7 +26,9 @@ public class Main {
             int[] A = generateNumbers(n);
 
             SortingTechnique heapSort = new HeapSort(A, direction);
+            SortingTechnique quickSort = new QuickSort(A, direction);
             testAlgorithm(heapSort, sb);
+            testAlgorithm(quickSort,sb);
 
             //Rest of sorting algorithms testing here ya gama3a. Same as the above two lines.
 

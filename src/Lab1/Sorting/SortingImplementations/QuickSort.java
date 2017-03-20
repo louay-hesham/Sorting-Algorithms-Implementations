@@ -16,14 +16,26 @@ public class QuickSort extends SortingTechnique {
         this.arraySize = array.length;
     }
 
-    public int partition (int [] arr, int left, int right){
-        int pivot = arr[ThreadLocalRandom.current().nextInt(left, right+1)];
+    @Override
+    protected void sort() {
+        this.quickSort(this.array,0, this.array.length - 1);
+
+
+    }
+
+    @Override
+    public String toString() {
+        return "Quick Sort";
+    }
+
+    public int partition (int left, int right){
+        int pivot = array[ThreadLocalRandom.current().nextInt(left, right+1)];
 
             while (left <= right){
-                while (array[left] < pivot) left++;
-                while (array[right] > pivot) right++;
+                while (this.array[left] < pivot) left++;
+                while (this.array[right] > pivot) right++;
                 if (left <= right){
-                    swap(arr,left,right);
+                    swap(this.array,left,right);
                     left++;
                     right--;
                 }
@@ -32,17 +44,16 @@ public class QuickSort extends SortingTechnique {
             return left;
     }
 
-    public  void quickSort(int[] array, int left, int right){
+    public void quickSort(int [] array, int left, int right){
         if (left >= right) {
             return;
         }
 
-        int index = partition(array,left,right);
+        int index = partition(left,right);
         quickSort(array,left,index -1);
         quickSort(array,index,right);
 
     }
-}
 
     private static void swap (int [] array, int firstIndex, int secondIndex){
         int temp;
@@ -51,13 +62,8 @@ public class QuickSort extends SortingTechnique {
         array[secondIndex] = temp;
     }
 
-    @Override
-    protected void sort() {
 
-    }
-
-    @Override
-    public String toString() {
-        return null;
-    }
 }
+
+
+
