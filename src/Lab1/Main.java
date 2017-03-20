@@ -39,7 +39,7 @@ public class Main {
         long start = System.nanoTime();
         int[] sorted = technique.getSortedArray();
         long end = System.nanoTime();
-        if (isSorted(sorted, direction)) {
+        if (isSorted(sorted)) {
             sb.append(technique.toString() + ":\tSuccess" + "\t\tTime elapsed = " + (end - start) + " nano seconds\n");
         } else {
             sb.append(technique.toString() + ":\tFailure" + "\n");
@@ -54,16 +54,16 @@ public class Main {
         return numbers;
     }
 
-    private static boolean isSorted(int[] A, SortingDirection direction) {
+    private static boolean isSorted(int[] A) {
         for (int i = 0; i < A.length - 1; i++) {
-            if (!compareNumbers(A[i], A[i + 1], direction)) {
+            if (!compareNumbers(A[i], A[i + 1])) {
                 return false;
             }
         }
         return true;
     }
 
-    private static boolean compareNumbers(int x, int y, SortingDirection direction) {
+    private static boolean compareNumbers(int x, int y) {
         if (direction == SortingDirection.ASCENDING) return x <= y;
         else return x >= y;
     }
