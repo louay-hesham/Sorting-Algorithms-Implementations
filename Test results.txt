@@ -1,0 +1,30 @@
+Test case 1: n = 100000
+Heap Sort:	Success		Time elapsed = 43675881 nano seconds
+
+Test case 2: n = 200000
+Heap Sort:	Success		Time elapsed = 65434840 nano seconds
+
+Test case 3: n = 300000
+Heap Sort:	Success		Time elapsed = 108646199 nano seconds
+
+Test case 4: n = 400000
+Heap Sort:	Success		Time elapsed = 188277329 nano seconds
+
+Test case 5: n = 500000
+Heap Sort:	Success		Time elapsed = 182987298 nano seconds
+
+Test case 6: n = 600000
+Heap Sort:	Success		Time elapsed = 255522961 nano seconds
+
+Test case 7: n = 700000
+Heap Sort:	Success		Time elapsed = 461134007 nano seconds
+
+Test case 8: n = 800000
+Heap Sort:	Success		Time elapsed = 587958187 nano seconds
+
+Test case 9: n = 900000
+Heap Sort:	Success		Time elapsed = 882295824 nano seconds
+
+Test case 10: n = 1000000
+Heap Sort:	Success		Time elapsed = 787845023 nano seconds
+
