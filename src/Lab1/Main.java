@@ -28,7 +28,7 @@ public class Main {
             SortingTechnique heapSort = new HeapSort(A, direction);
             SortingTechnique quickSort = new QuickSort(A, direction);
             testAlgorithm(heapSort, sb);
-            testAlgorithm(quickSort,sb);
+            testAlgorithm(quickSort, sb);
 
             //Rest of sorting algorithms testing here ya gama3a. Same as the above two lines.
 
@@ -38,7 +38,7 @@ public class Main {
         saveFile(sb.toString());
     }
 
-    private static void testAlgorithm(SortingTechnique technique, StringBuilder sb){
+    private static void testAlgorithm(SortingTechnique technique, StringBuilder sb) {
         long start = System.nanoTime();
         int[] sorted = technique.getSortedArray();
         long end = System.nanoTime();
