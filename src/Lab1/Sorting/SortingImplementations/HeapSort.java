@@ -31,13 +31,13 @@ public class HeapSort extends SortingTechnique {
         int l = this.left(i);
         int r = this.right(i);
         int target;
-        if (l < this.heapSize && this.compareNumbers(array[l], array[i])) {
+        if (l < this.heapSize && this.compareNumbers(array[i], array[l])) {
             target = l;
         } else {
             target = i;
         }
 
-        if (r < this.heapSize && this.compareNumbers(array[r], array[target])) {
+        if (r < this.heapSize && this.compareNumbers(array[target], array[r])) {
             target = r;
         }
 

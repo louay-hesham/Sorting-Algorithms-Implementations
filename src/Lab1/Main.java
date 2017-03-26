@@ -2,6 +2,7 @@ package Lab1;
 
 import Lab1.Sorting.SortingDirection;
 import Lab1.Sorting.SortingImplementations.HeapSort;
+import Lab1.Sorting.SortingImplementations.QuickSort;
 import Lab1.Sorting.SortingTechnique;
 
 import java.io.File;
@@ -17,7 +18,7 @@ public class Main {
     public static void main(String[] args) {
         StringBuilder sb = new StringBuilder();
         int t = 1;
-        for (int n = 100000; n <= 1000000; n += 100000) {
+        for (int n = 10; n <= 1000000; n *= 10) {
             System.out.println("Testing with n = " + n);
             sb.append("Test case " + t + ": n = " + n + "\n");
             t++;
@@ -27,7 +28,8 @@ public class Main {
             SortingTechnique heapSort = new HeapSort(A, direction);
             testAlgorithm(heapSort, sb);
 
-            //Rest of sorting algorithms testing here ya gama3a. Same as the above two lines.
+            SortingTechnique quickSort = new QuickSort(A, direction);
+            testAlgorithm(quickSort, sb);
 
             sb.append("\n");
         }
@@ -35,7 +37,7 @@ public class Main {
         saveFile(sb.toString());
     }
 
-    private static void testAlgorithm(SortingTechnique technique, StringBuilder sb){
+    private static void testAlgorithm(SortingTechnique technique, StringBuilder sb) {
         long start = System.nanoTime();
         int[] sorted = technique.getSortedArray();
         long end = System.nanoTime();
