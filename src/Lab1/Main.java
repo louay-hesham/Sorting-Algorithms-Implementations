@@ -13,7 +13,7 @@ import java.util.concurrent.ThreadLocalRandom;
 public class Main {
 
     private static final int rangeMin = 0, rangeMax = 1000000;
-    private static SortingDirection direction = SortingDirection.DESCENDING;
+    private static SortingDirection direction = SortingDirection.ASCENDING;
 
     public static void main(String[] args) {
         StringBuilder sb = new StringBuilder();
