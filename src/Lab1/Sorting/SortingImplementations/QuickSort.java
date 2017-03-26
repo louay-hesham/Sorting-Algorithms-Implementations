@@ -9,18 +9,16 @@ import java.util.concurrent.ThreadLocalRandom;
  */
 public class QuickSort extends SortingTechnique {
 
-    private int arraySize;
 
     public QuickSort(int[] array, SortingDirection direction) {
         super(array, direction);
-        this.arraySize = array.length;
     }
+
+
 
     @Override
     protected void sort() {
-        this.quickSort(this.array,0, this.array.length - 1);
-
-
+        quickSort(this.array,0,this.array.length - 1);
     }
 
     @Override
@@ -28,41 +26,35 @@ public class QuickSort extends SortingTechnique {
         return "Quick Sort";
     }
 
-    public int partition (int left, int right){
-        int pivot = array[ThreadLocalRandom.current().nextInt(left, right+1)];
-
-            while (left <= right){
-                while (this.array[left] < pivot) left++;
-                while (this.array[right] > pivot) right++;
-                if (left <= right){
-                    swap(this.array,left,right);
-                    left++;
-                    right--;
-                }
+    public static int partition (int [] array, int left, int pivot){
+        int x, i;
+        x = array[pivot];
+        i = left - 1;
+        for (int j = left; j <= pivot - 1; j++){
+            if (array[j] <= x){
+                i++;
+                swap(array,i ,j);
             }
 
-            return left;
-    }
-
-    public void quickSort(int [] array, int left, int right){
-        if (left >= right) {
-            return;
         }
 
-        int index = partition(left,right);
-        quickSort(array,left,index -1);
-        quickSort(array,index,right);
-
+        swap(array, i+1, pivot);
+        return (i+1);
+    }
+    public static void quickSort (int [] array, int left, int pivot){
+        if (left < pivot){
+            int q = partition(array,left,pivot);
+            quickSort(array, left, q - 1);
+            quickSort(array, q+1,pivot);
+        }
     }
 
-    private static void swap (int [] array, int firstIndex, int secondIndex){
+    public static void swap (int [] array, int source, int destination){
         int temp;
-        temp = array[firstIndex];
-        array[firstIndex] = array[secondIndex];
-        array[secondIndex] = temp;
+        temp = array[destination];
+        array[destination] = array[source];
+        array[source] = temp;
     }
-
-
 }
 
 
