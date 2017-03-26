@@ -22,7 +22,7 @@ public class QuickSort extends SortingTechnique {
 
     @Override
     public String toString() {
-        return "Quick Sort";
+        return "Quick\tSort";
     }
 
     private int partition(int left, int pivot) {

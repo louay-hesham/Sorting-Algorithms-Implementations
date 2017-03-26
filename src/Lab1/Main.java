@@ -1,7 +1,9 @@
 package Lab1;
 
 import Lab1.Sorting.SortingDirection;
+import Lab1.Sorting.SortingImplementations.BubbleSort;
 import Lab1.Sorting.SortingImplementations.HeapSort;
+import Lab1.Sorting.SortingImplementations.MergeSort;
 import Lab1.Sorting.SortingImplementations.QuickSort;
 import Lab1.Sorting.SortingTechnique;
 
@@ -13,12 +15,12 @@ import java.util.concurrent.ThreadLocalRandom;
 public class Main {
 
     private static final int rangeMin = 0, rangeMax = 1000000;
-    private static SortingDirection direction = SortingDirection.DESCENDING;
+    private static SortingDirection direction = SortingDirection.ASCENDING;
 
     public static void main(String[] args) {
         StringBuilder sb = new StringBuilder();
         int t = 1;
-        for (int n = 10; n <= 1000000; n *= 10) {
+        for (int n = 10; n <= 100000; n *= 10) {
             System.out.println("Testing with n = " + n);
             sb.append("Test case " + t + ": n = " + n + "\n");
             t++;
@@ -31,6 +33,12 @@ public class Main {
             SortingTechnique quickSort = new QuickSort(A, direction);
             testAlgorithm(quickSort, sb);
 
+            SortingTechnique mergeSort = new MergeSort(A, direction);
+            testAlgorithm(mergeSort, sb);
+
+            SortingTechnique bubbleSort = new BubbleSort(A, direction);
+            testAlgorithm(bubbleSort, sb);
+
             sb.append("\n");
         }
 
@@ -42,9 +50,9 @@ public class Main {
         int[] sorted = technique.getSortedArray();
         long end = System.nanoTime();
         if (isSorted(sorted)) {
-            sb.append(technique.toString() + ":\tSuccess" + "\t\tTime elapsed = " + (end - start) + " nano seconds\n");
+            sb.append(technique.toString() + ":\t\tSuccess" + "\t\tTime elapsed = " + (end - start) + "\tnano seconds\n");
         } else {
-            sb.append(technique.toString() + ":\tFailure" + "\n");
+            sb.append(technique.toString() + ":\t\tFailure" + "\n");
         }
     }
 
