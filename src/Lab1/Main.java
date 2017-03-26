@@ -13,12 +13,12 @@ import java.util.concurrent.ThreadLocalRandom;
 public class Main {
 
     private static final int rangeMin = 0, rangeMax = 1000000;
-    private static SortingDirection direction = SortingDirection.ASCENDING;
+    private static SortingDirection direction = SortingDirection.DESCENDING;
 
     public static void main(String[] args) {
         StringBuilder sb = new StringBuilder();
         int t = 1;
-        for (int n = 100000; n <= 1000000; n += 100000) {
+        for (int n = 10; n <= 1000000; n *= 10) {
             System.out.println("Testing with n = " + n);
             sb.append("Test case " + t + ": n = " + n + "\n");
             t++;
@@ -26,11 +26,10 @@ public class Main {
             int[] A = generateNumbers(n);
 
             SortingTechnique heapSort = new HeapSort(A, direction);
-            SortingTechnique quickSort = new QuickSort(A, direction);
             testAlgorithm(heapSort, sb);
-            testAlgorithm(quickSort, sb);
 
-            //Rest of sorting algorithms testing here ya gama3a. Same as the above two lines.
+            SortingTechnique quickSort = new QuickSort(A, direction);
+            testAlgorithm(quickSort, sb);
 
             sb.append("\n");
         }

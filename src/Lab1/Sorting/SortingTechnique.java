@@ -17,8 +17,8 @@ public abstract class SortingTechnique {
     protected abstract void sort();
 
     protected boolean compareNumbers(int x, int y) {
-        if (this.direction == SortingDirection.ASCENDING) return x < y;
-        else return x > y;
+        if (this.direction.equals(SortingDirection.ASCENDING)) return x <= y;
+        else return x >= y;
     }
 
     public int[] getSortedArray() {
