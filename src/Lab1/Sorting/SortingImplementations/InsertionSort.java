@@ -13,7 +13,7 @@ public class InsertionSort extends SortingTechnique{
 
     @Override
     protected void sort() {
-
+        insertionSort(this.array);
     }
 
     @Override
@@ -21,5 +21,24 @@ public class InsertionSort extends SortingTechnique{
         return null;
     }
 
-    
+    public void insertionSort(int [] array){
+
+        for (int i = 1; i < array.length; i++){
+            for (int j = i; j > 0; j--){
+                if (this.compareNumbers(array[j], array[j-1])){
+                    swap(array, j, j-1);
+                }
+            }
+        }
+    }
+
+    private void swap(int[] array, int source, int destination){
+        int temp;
+
+        temp = array[destination];
+        array[destination] = array[source];
+        array[source] = temp;
+    }
+
+
 }
