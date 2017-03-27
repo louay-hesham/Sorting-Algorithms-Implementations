@@ -42,9 +42,7 @@ public class HeapSort extends SortingTechnique {
         }
 
         if (target != i) {
-            int temp = array[i];
-            array[i] = array[target];
-            array[target] = temp;
+            this.swap(i, target);
             heapify(target);
         }
     }
@@ -59,9 +57,7 @@ public class HeapSort extends SortingTechnique {
     protected void sort() {
         this.buildHeap();
         for (int i = array.length - 1; i >= 1; i--) {
-            int temp = array[0];
-            array[0] = array[i];
-            array[i] = temp;
+            this.swap(0, i);
             this.heapSize--;
             this.heapify(0);
         }
@@ -69,6 +65,6 @@ public class HeapSort extends SortingTechnique {
 
     @Override
     public String toString() {
-        return "Heap\tSort";
+        return "Heap Sort\t\t";
     }
 }

@@ -56,6 +56,6 @@ public class MergeSort extends SortingTechnique {
 
     @Override
     public String toString() {
-        return "Merge\tSort";
+        return "Merge Sort\t\t";
     }
 }
