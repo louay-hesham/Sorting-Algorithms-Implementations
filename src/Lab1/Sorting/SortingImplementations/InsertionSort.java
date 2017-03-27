@@ -31,14 +31,4 @@ public class InsertionSort extends SortingTechnique {
             }
         }
     }
-
-    private void swap(int[] array, int source, int destination){
-        int temp;
-
-        temp = array[destination];
-        array[destination] = array[source];
-        array[source] = temp;
-    }
-
-
 }

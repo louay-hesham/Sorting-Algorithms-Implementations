@@ -21,6 +21,13 @@ public abstract class SortingTechnique {
         else return x >= y;
     }
 
+    protected void swap(int source, int destination){
+        int temp;
+        temp = array[destination];
+        array[destination] = array[source];
+        array[source] = temp;
+    }
+
     public int[] getSortedArray() {
         this.sort();
         return this.array;

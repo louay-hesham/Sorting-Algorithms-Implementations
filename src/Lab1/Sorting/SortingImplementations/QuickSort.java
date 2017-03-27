@@ -46,13 +46,6 @@ public class QuickSort extends SortingTechnique {
             quickSort(q + 1, pivot);
         }
     }
-
-    private void swap(int source, int destination) {
-        int temp;
-        temp = array[destination];
-        array[destination] = array[source];
-        array[source] = temp;
-    }
 }
 
 
