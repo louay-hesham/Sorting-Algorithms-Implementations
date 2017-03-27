@@ -6,14 +6,14 @@ import Lab1.Sorting.SortingTechnique;
 /**
  * Created by Muhammad Korra on 27-Mar-17.
  */
-public class InsertionSort extends SortingTechnique{
+public class InsertionSort extends SortingTechnique {
     public InsertionSort(int[] array, SortingDirection direction) {
         super(array, direction);
     }
 
     @Override
     protected void sort() {
-        insertionSort(this.array);
+        insertionSort();
     }
 
     @Override
@@ -21,12 +21,12 @@ public class InsertionSort extends SortingTechnique{
         return "Insertion\tSort";
     }
 
-    public void insertionSort(int [] array){
+    public void insertionSort() {
 
-        for (int i = 1; i < array.length; i++){
-            for (int j = i; j > 0; j--){
-                if (this.compareNumbers(array[j], array[j-1])){
-                    swap(array, j, j-1);
+        for (int i = 1; i < array.length; i++) {
+            for (int j = i; j > 0; j--) {
+                if (this.compareNumbers(array[j], array[j - 1])) {
+                    this.swap(j, j - 1);
                 }
             }
         }
