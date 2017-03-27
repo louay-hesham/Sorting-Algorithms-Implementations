@@ -6,10 +6,10 @@ import Lab1.Sorting.SortingTechnique;
 /**
  * Created by Muhammad Korra on 20-Mar-17.
  */
-public class QuickSort extends SortingTechnique {
+public class QuickSortFixedPivot extends SortingTechnique {
 
 
-    public QuickSort(int[] array, SortingDirection direction) {
+    public QuickSortFixedPivot(int[] array, SortingDirection direction) {
         super(array, direction);
     }
 
@@ -22,10 +22,10 @@ public class QuickSort extends SortingTechnique {
 
     @Override
     public String toString() {
-        return "Quick Sort\t\t";
+        return "Quick Sort (Fixed Pivot)\t";
     }
 
-    private int partition(int left, int pivot) {
+    protected int partition(int left, int pivot) {
         int x, i;
         x = array[pivot];
         i = left - 1;

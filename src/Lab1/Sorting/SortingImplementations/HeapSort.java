@@ -65,6 +65,6 @@ public class HeapSort extends SortingTechnique {
 
     @Override
     public String toString() {
-        return "Heap Sort\t\t";
+        return "Heap Sort\t\t\t\t\t";
     }
 }

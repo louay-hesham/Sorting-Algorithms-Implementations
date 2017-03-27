@@ -1,35 +1,3 @@
-Test case 1: n = 10
-Heap Sort		:		Success		Time elapsed = 74520	nano seconds
-Quick Sort		:		Success		Time elapsed = 36144	nano seconds
-Merge Sort		:		Success		Time elapsed = 33467	nano seconds
-Bubble Sort		:		Success		Time elapsed = 30344	nano seconds
-Insertion Sort	:		Success		Time elapsed = 44177	nano seconds
-
-Test case 2: n = 100
-Heap Sort		:		Success		Time elapsed = 690761	nano seconds
-Quick Sort		:		Success		Time elapsed = 201248	nano seconds
-Merge Sort		:		Success		Time elapsed = 205265	nano seconds
-Bubble Sort		:		Success		Time elapsed = 925030	nano seconds
-Insertion Sort	:		Success		Time elapsed = 1777771	nano seconds
-
-Test case 3: n = 1000
-Heap Sort		:		Success		Time elapsed = 999996	nano seconds
-Quick Sort		:		Success		Time elapsed = 1356087	nano seconds
-Merge Sort		:		Success		Time elapsed = 1919226	nano seconds
-Bubble Sort		:		Success		Time elapsed = 18835274	nano seconds
-Insertion Sort	:		Success		Time elapsed = 15350235	nano seconds
-
-Test case 4: n = 10000
-Heap Sort		:		Success		Time elapsed = 4017835	nano seconds
-Quick Sort		:		Success		Time elapsed = 18638042	nano seconds
-Merge Sort		:		Success		Time elapsed = 17215467	nano seconds
-Bubble Sort		:		Success		Time elapsed = 348175911	nano seconds
-Insertion Sort	:		Success		Time elapsed = 293319792	nano seconds
-
-Test case 5: n = 100000
-Heap Sort		:		Success		Time elapsed = 46541110	nano seconds
-Quick Sort		:		Success		Time elapsed = 16759869	nano seconds
-Merge Sort		:		Success		Time elapsed = 25388575	nano seconds
-Bubble Sort		:		Success		Time elapsed = 21641034302	nano seconds
-Insertion Sort	:		Success		Time elapsed = 9835816740	nano seconds
-
+Test case 1: n = 1000000  with last element = -1
+Quick Sort (Fixed Pivot)	:		Success		Time elapsed = 311466983	nano seconds
+Quick Sort (Random Pivot)	:		Success		Time elapsed = 402061037	nano seconds

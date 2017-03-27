@@ -12,35 +12,54 @@ import java.util.concurrent.ThreadLocalRandom;
 public class Main {
 
     private static final int rangeMin = 0, rangeMax = 1000000;
-    private static SortingDirection direction = SortingDirection.ASCENDING;
+    private static SortingDirection direction = SortingDirection.DESCENDING;
 
     public static void main(String[] args) {
         StringBuilder sb = new StringBuilder();
         int t = 1;
-        for (int n = 10; n <= 100000; n *= 10) {
-            System.out.println("Testing with n = " + n);
-            sb.append("Test case " + t + ": n = " + n + "\n");
-            t++;
+//        for (int n = 10; n <= 100000; n *= 10) {
+//            System.out.println("Testing with n = " + n);
+//            sb.append("Test case " + t + ": n = " + n + "\n");
+//            t++;
+//
+//            int[] A = generateNumbers(n);
+//
+//            SortingTechnique heapSort = new HeapSort(A, direction);
+//            testAlgorithm(heapSort, sb);
+//
+//            SortingTechnique quickSortFixedPivot = new QuickSortFixedPivot(A, direction);
+//            testAlgorithm(quickSortFixedPivot, sb);
+//
+//            SortingTechnique quickSortRandomPivot = new QuickSortRandomPivot(A, direction);
+//            testAlgorithm(quickSortRandomPivot, sb);
+//
+//            SortingTechnique mergeSort = new MergeSort(A, direction);
+//            testAlgorithm(mergeSort, sb);
+//
+//            SortingTechnique bubbleSort = new BubbleSort(A, direction);
+//            testAlgorithm(bubbleSort, sb);
+//
+//            SortingTechnique insertionSort = new InsertionSort(A, direction);
+//            testAlgorithm(insertionSort, sb);
+//
+//            sb.append("\n");
+//        }
 
-            int[] A = generateNumbers(n);
+        int n = 1000000;
+        System.out.println("Testing with n = " + n +" with last element = -1");
+        sb.append("Test case " + t + ": n = " + n +"  with last element = -1\n");
 
-            SortingTechnique heapSort = new HeapSort(A, direction);
-            testAlgorithm(heapSort, sb);
+        int[] A = generateNumbers(n);
+        A[n - 1] = -1;
 
-            SortingTechnique quickSort = new QuickSort(A, direction);
-            testAlgorithm(quickSort, sb);
+        direction = SortingDirection.DESCENDING;
 
-            SortingTechnique mergeSort = new MergeSort(A, direction);
-            testAlgorithm(mergeSort, sb);
+        SortingTechnique quickSortFixedPivot = new QuickSortFixedPivot(A, direction);
+        testAlgorithm(quickSortFixedPivot, sb);
 
-            SortingTechnique bubbleSort = new BubbleSort(A, direction);
-            testAlgorithm(bubbleSort, sb);
+        SortingTechnique quickSortRandomPivot = new QuickSortRandomPivot(A, direction);
+        testAlgorithm(quickSortRandomPivot, sb);
 
-            SortingTechnique insertionSort = new InsertionSort(A, direction);
-            testAlgorithm(insertionSort, sb);
-
-            sb.append("\n");
-        }
 
         saveFile(sb.toString());
     }
