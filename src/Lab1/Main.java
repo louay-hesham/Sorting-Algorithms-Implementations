@@ -1,10 +1,7 @@
 package Lab1;
 
 import Lab1.Sorting.SortingDirection;
-import Lab1.Sorting.SortingImplementations.BubbleSort;
-import Lab1.Sorting.SortingImplementations.HeapSort;
-import Lab1.Sorting.SortingImplementations.MergeSort;
-import Lab1.Sorting.SortingImplementations.QuickSort;
+import Lab1.Sorting.SortingImplementations.*;
 import Lab1.Sorting.SortingTechnique;
 
 import java.io.File;
@@ -38,6 +35,9 @@ public class Main {
 
             SortingTechnique bubbleSort = new BubbleSort(A, direction);
             testAlgorithm(bubbleSort, sb);
+
+            SortingTechnique insertionSort = new InsertionSort(A, direction);
+            testAlgorithm(insertionSort, sb);
 
             sb.append("\n");
         }

@@ -18,7 +18,7 @@ public class InsertionSort extends SortingTechnique{
 
     @Override
     public String toString() {
-        return null;
+        return "Insertion\tSort";
     }
 
     public void insertionSort(int [] array){
