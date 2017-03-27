@@ -13,7 +13,7 @@ public class BubbleSort extends SortingTechnique {
     }
 
     public String toString() {
-        return "Bubble\tSort";
+        return "Bubble Sort\t\t";
     }
 
     protected void sort() {
